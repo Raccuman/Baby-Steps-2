@@ -17,6 +17,7 @@ public class BirdScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
         if (Input.GetKeyDown(KeyCode.Space) == true)
         {
@@ -26,4 +27,4 @@ public class BirdScript : MonoBehaviour
     }
 }
 
-// this is the new one
+// this is the new new one
