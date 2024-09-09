@@ -7,11 +7,13 @@ public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public float flapStrength;
+    public logicScript logic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
+
     }
     
 
@@ -24,6 +26,11 @@ public class BirdScript : MonoBehaviour
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        logic.gameOver();
     }
 }
 
