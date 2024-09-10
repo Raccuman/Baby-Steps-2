@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdScript : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class BirdScript : MonoBehaviour
     public float flapStrength;
     public logicScript logic;
     public bool birdIsAlive = true;
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
+        
 
     }
     
@@ -25,6 +28,7 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive)
         {
             myRigidbody.velocity = Vector2.up * flapStrength;
+
         }
 
     }
